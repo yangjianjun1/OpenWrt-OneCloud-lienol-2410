@@ -116,3 +116,6 @@ sed -i "s/hostname='.*'/hostname='OneCloud'/g" package/base-files/files/bin/conf
 # 修改默认时区
 sed -i "s/timezone='.*'/timezone='CST-8'/g" package/base-files/files/bin/config_generate
 sed -i "/.*timezone='CST-8'.*/a\ set system.@system[-1].zonename='Asia/Shanghai'" package/base-files/files/bin/config_generate
+
+# 修复 gen_aml_emmc_img.sh 权限丢失导致
+chmod +x target/linux/amlogic/image/gen_aml_emmc_img.sh
